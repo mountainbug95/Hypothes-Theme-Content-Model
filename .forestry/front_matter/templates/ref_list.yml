@@ -1,6 +1,11 @@
 ---
 is_partial: true
 fields:
+  - type: boolean
+    name: enabled
+    label: Enabled
+    description: Displays the Section in the site footer
+    default: false
   - type: text
     name: title
     label: List Title

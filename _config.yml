@@ -18,6 +18,7 @@ footer:
       icon: fa-linkedin
       link_url: '#'
   ref_list1:
+    enabled: true
     title: Lorem aliquam
     links:
       - title: Ultrices nulla
@@ -33,6 +34,7 @@ footer:
       - title: Gravida dolore
         link_url: generic.md
   ref_list2:
+    enabled: true
     title: Magna tempus
     links:
       - title: Feugiat ligula
@@ -46,6 +48,7 @@ footer:
       - title: Sed lectus donec
         link_url: generic.md
   contact:
+    enabled: true
     title: Morbi sed volutpat
     subtitle: >-
       Sed vulputate sem tristique cursus sed magna gravida non lorem ipsum dolor
