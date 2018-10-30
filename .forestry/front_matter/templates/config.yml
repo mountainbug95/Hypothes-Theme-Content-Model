@@ -89,10 +89,10 @@ fields:
             name: phone_link
             label: Phone Number URL
             description: The URL tied to the phone number
-          - type: text
-            name: copyright
-            label: Copyright Text
-            description: The copyright text displayed at the bottom of the footer
+      - type: text
+        name: copyright
+        label: Copyright Text
+        description: The copyright text displayed at the bottom of the footer
   - type: select
     name: palette
     label: Color Palette
