@@ -31,10 +31,16 @@ fields:
         name: bg_video_path
         label: Background Video
         description: The video played in the background of the page banner
-      - type: field_group
+      - type: field_group_list
         name: actions
         label: Banner Action Buttons
-        fields: []
+        config:
+          labelField: label
+        fields:
+          - type: include
+            name: include_action
+            label: Include action
+            template: action
       - type: field_group_list
         name: features
         label: Features
