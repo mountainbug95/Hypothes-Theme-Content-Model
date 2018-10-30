@@ -1,0 +1,39 @@
+<!-- Section -->
+<section id="{{ include.section.section_id }}" class="main">
+    <header class="{{ include.section.bg_accent }}">
+        <h2>{{ include.section.title }}</h2>
+        {{ include.section.subtitle | markdownify }}
+    </header>
+    <ul class="tabs">
+        {% for tab in include.section.tabs %}
+        <li>
+            <h3>{{ tab.title }}</h3>
+            <div class="spotlight">
+                <ul>
+                    <li>
+                        <h4>{{ tab.left_sections.title1 }}</h4>
+                        {{ tab.left_sections.subtitle1 | markdownify }}
+                    </li>
+                    <li>
+                        <h4>{{ tab.left_sections.title2 }}</h4>
+                        {{ tab.left_sections.subtitle2 | markdownify }}
+                    </li>
+                </ul>
+                {% if tab.center_img_path %}
+                <span class="image"><img src="{{ tab.center_img_path | relative_url }}" alt="" /></span>
+                {% endif %}
+                <ul>
+                    <li>
+                        <h4>{{ tab.right_sections.title1 }}</h4>
+                        {{ tab.right_sections.subtitle1 | markdownify }}
+                    </li>
+                    <li>
+                        <h4>{{ tab.right_sections.title2 }}</h4>
+                        {{ tab.right_sections.subtitle2 | markdownify }}
+                    </li>
+                </ul>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</section>

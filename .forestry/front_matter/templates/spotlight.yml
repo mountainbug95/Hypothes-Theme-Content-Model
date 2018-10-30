@@ -1,0 +1,54 @@
+---
+label: Spotlight Section
+hide_body: true
+is_partial: true
+display_field: title
+fields:
+  - type: text
+    name: title
+    label: Section Title
+    description: The bold text displayed at the top of the section
+    default: Etiam sed faucibus consequat
+    config:
+      required: true
+  - type: textarea
+    name: subtitle
+    label: Section Subtitle
+    description: The text displayed below the section title
+    default: >-
+      Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue eu
+      vulpu magna erat. Aliquam erat volutpat. Nam dui mi tincidunt magna
+      accumsan.
+    config:
+      wysiwyg: true
+      schema:
+        format: markdown
+  - type: select
+    name: bg_accent
+    label: Background Accent
+    description: Controls The color scheme of the section
+    default: accent2
+    config:
+      required: true
+      source:
+        type: custom
+      options:
+        - alt
+        - accent1
+        - accent2
+  - type: text
+    name: section_id
+    label: Section ID
+    default: two
+    config:
+      required: true
+  - type: file
+    name: home_img_path
+    label: Spotlight Image
+    description: The image displayed below the spotlight subtitle
+  - type: text
+    name: component
+    hidden: true
+    default: spotlight.html
+    config:
+      required: true

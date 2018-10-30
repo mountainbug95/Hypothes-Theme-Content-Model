@@ -1,0 +1,12 @@
+<article>
+    {% if post_page.alt_img_path %}
+    <a href="{{ post_page.url | relative_url }}" class="image"><img src="{{ post_page.alt_img_path | relative_url }}" alt="" /></a>
+    {% endif %}
+    <div class="content">
+        <h3>{{ post_page.title }}</h3>
+        {{ post_page.excerpt | markdownify }}
+        <ul class="actions">
+            <li><a href="{{ post_page.url | relative_url }}" class="button">More</a></li>
+        </ul>
+    </div>
+</article>

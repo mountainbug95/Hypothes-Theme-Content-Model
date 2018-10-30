@@ -1,0 +1,50 @@
+---
+label: Post
+is_partial: false
+fields:
+  - type: text
+    name: title
+    label: Page Title
+    config:
+      required: true
+  - type: textarea
+    name: subtitle
+    label: Page Subtitle
+    config:
+      wysiwyg: true
+      schema:
+        format: markdown
+  - type: textarea
+    name: excerpt
+    label: Post Excerpt
+    description: The excerpt displayed in the home posts section
+    config:
+      wysiwyg: true
+      schema:
+        format: markdown
+  - type: datetime
+    name: datel
+    label: Post Date
+    config:
+      required: true
+  - type: file
+    name: content_img_path
+    label: Content Image
+    description: The image displayed in the page content
+  - type: file
+    name: alt_img_path
+    label: Home Posts Image
+    description: The image displayed in the home posts section
+  - type: text
+    name: layout
+    label: Layout
+    hidden: true
+    default: page
+    config:
+      required: true
+pages:
+  - _posts/2017-04-01-post-01.md
+  - _posts/2017-04-02-post-02.md
+  - _posts/2017-04-03-post-03.md
+  - _posts/2017-04-04-post-04.md
+  - _posts/2017-04-05-post-05.md

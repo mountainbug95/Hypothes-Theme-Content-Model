@@ -1,0 +1,62 @@
+---
+label: Tabs Section
+hide_body: true
+is_partial: true
+display_field: title
+fields:
+  - type: text
+    name: title
+    label: Section Title
+    description: The bold text displayed at the top of the section
+    default: Sed adipising ornare risus
+    config:
+      required: true
+  - type: textarea
+    name: subtitle
+    label: Section Subtitle
+    description: The text displayed below the section title
+    default: >-
+      Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue eu
+      vulpu magna erat. Aliquam erat volutpat. Nam dui mi tincidunt quis
+      accumsan porttitor facilisis luctus, metus lorem feugiat tempus
+      adipiscing.
+    config:
+      wysiwyg: true
+      schema:
+        format: markdown
+  - type: select
+    name: bg_accent
+    label: Background Accent
+    description: Controls The color scheme of the section
+    default: accent1
+    config:
+      required: true
+      source:
+        type: custom
+      options:
+        - alt
+        - accent1
+        - accent2
+  - type: text
+    name: section_id
+    label: Section ID
+    default: one
+    config:
+      required: true
+  - type: field_group_list
+    name: tabs
+    label: Section Tabs
+    description: A list of tabs tabs displayed in the section
+    config:
+      labelField: title
+    fields:
+      - type: include
+        name: include_tab
+        label: Include tab
+        template: tab
+  - type: text
+    name: component
+    hidden: true
+    default: tabs.html
+    config:
+      required: true

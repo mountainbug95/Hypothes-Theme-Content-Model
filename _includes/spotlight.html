@@ -1,0 +1,12 @@
+<!-- Section -->
+<section id="{{ include.section.section_id }}" class="main {{ include.section.bg_accent }}">
+    <header>
+        <h2>{{ include.section.title }}</h2>
+        {{ include.section.subtitle | markdownify }}
+    </header>
+    <div class="inner">
+        {% if include.section.home_img_path %}
+        <span class="image main"><img src="{{ include.section.home_img_path | relative_url }}" alt="" /></span>
+        {% endif %}
+    </div>
+</section>

@@ -1,0 +1,79 @@
+---
+label: Home
+hide_body: true
+is_partial: false
+fields:
+  - type: text
+    name: title
+    label: Page Title
+    config:
+      required: true
+  - type: field_group
+    name: banner
+    label: Page Banner
+    description: The banner displayed at the top of the landing page
+    fields:
+      - type: textarea
+        name: title
+        label: Banner Title
+        description: The bold text displayed at the top of the banner
+        config:
+          required: true
+      - type: textarea
+        name: subtitle
+        label: Banner Subtitle
+        description: the text displayed below the banner title
+        config:
+          wysiwyg: true
+          schema:
+            format: markdown
+      - type: file
+        name: bg_video_path
+        label: Background Video
+        description: The video played in the background of the page banner
+      - type: field_group
+        name: actions
+        label: Banner Action Buttons
+        fields: []
+      - type: field_group_list
+        name: features
+        label: Features
+        description: Feature icons displayed along the bottom of the landing page banner
+        config:
+          labelField: title
+        fields:
+          - type: text
+            name: title
+            label: Feature Title
+            description: The bold text displayed below the feature icon
+            config:
+              required: true
+          - type: textarea
+            name: subtitle
+            label: Feature Subtitle
+            description: The text displayed below the feature title
+            config:
+              wysiwyg: true
+              schema:
+                format: markdown
+          - type: text
+            name: icon
+            label: Icon
+            description: Font Awesome icon
+  - type: blocks
+    name: sections
+    label: Sections
+    description: Home Sections
+    template_types:
+      - tabs
+      - spotlight
+      - posts
+  - type: text
+    name: layout
+    label: Layout
+    hidden: true
+    default: home
+    config:
+      required: true
+pages:
+  - index.md

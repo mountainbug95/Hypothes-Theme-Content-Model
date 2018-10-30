@@ -1,0 +1,23 @@
+---
+is_partial: true
+fields:
+  - type: text
+    name: title
+    label: List Title
+  - type: field_group_list
+    name: links
+    label: Reference Links
+    description: A list of reference links
+    config:
+      labelField: title
+    fields:
+      - type: text
+        name: title
+        label: Reference Title
+        config:
+          required: true
+      - type: text
+        name: link_url
+        label: Reference URL
+        config:
+          required: true

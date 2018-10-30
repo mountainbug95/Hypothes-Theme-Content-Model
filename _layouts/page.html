@@ -1,0 +1,21 @@
+---
+layout: body
+---
+
+<!-- Section -->
+<section id="one" class="main alt">
+    <header class="accent1">
+        <h1>{{ page.title }}</h1>
+        {% if page.subtitle %}
+        {{ page.subtitle | markdownify }}
+        {% endif %}
+    </header>
+    <div class="inner alt">
+        <div class="content">
+            {% if page.content_img_path %}
+            <span class="image main"><img src="{{ page.content_img_path | relative_url }}" alt="" /></span>
+            {% endif %}
+            {{ content }}
+        </div>
+    </div>
+</section>

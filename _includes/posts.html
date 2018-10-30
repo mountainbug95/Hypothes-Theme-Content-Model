@@ -1,0 +1,38 @@
+<!-- Section -->
+<section id="{{ include.section.section_id }}" class="main {{ include.section.bg_accent }}">
+    <header>
+        <h2>{{ include.section.title }}</h2>
+        {{ include.section.subtitle | markdownify }}
+    </header>
+    <div class="inner">
+        <div class="posts">
+            <div>
+                {% assign arr = include.site.posts | sort: 'date' | reverse %}
+                {% for post_page in arr %}
+                    {% assign val_hold = forloop.index0 | modulo: 3 %}
+                    {% if val_hold == 0 %}
+                        {% include post.html %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div>
+                {% assign arr = include.site.posts | sort: 'date' | reverse %}
+                {% for post_page in arr %}
+                    {% assign val_hold = forloop.index0 | modulo: 3 %}
+                    {% if val_hold == 1 %}
+                        {% include post.html %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div>
+                {% assign arr = include.site.posts | sort: 'date' | reverse %}
+                {% for post_page in arr %}
+                    {% assign val_hold = forloop.index0 | modulo: 3 %}
+                    {% if val_hold == 2 %}
+                        {% include post.html %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>

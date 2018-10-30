@@ -1,0 +1,72 @@
+title: Hypothesis
+baseurl: /
+header:
+  logo: <strong>Hypothesis</strong>
+footer:
+  title: Nullam sed gravida
+  subtitle: >-
+    Phasellus ultrices sed nulla quis nibh. Quisque a lectus. Donec consectetuer
+    ligula vulputate sem tristique cursus sed magna gravida non.
+  social_links:
+    - title: Facebook
+      icon: fa-facebook
+      link_url: '#'
+    - title: Twitter
+      icon: fa-twitter
+      link_url: '#'
+    - title: LinkedIn
+      icon: fa-linkedin
+      link_url: '#'
+  ref_list1:
+    title: Lorem aliquam
+    links:
+      - title: Ultrices nulla
+        link_url: generic.md
+      - title: Quis lectus donec
+        link_url: generic.md
+      - title: Magna ligula
+        link_url: generic.md
+      - title: Sed etiam tristique
+        link_url: generic.md
+      - title: Cursus magna
+        link_url: generic.md
+      - title: Gravida dolore
+        link_url: generic.md
+  ref_list2:
+    title: Magna tempus
+    links:
+      - title: Feugiat ligula
+        link_url: generic.md
+      - title: Vulputate tristique
+        link_url: generic.md
+      - title: Ultrices nulla
+        link_url: generic.md
+      - title: Cursus sed magna
+        link_url: generic.md
+      - title: Sed lectus donec
+        link_url: generic.md
+  contact:
+    title: Morbi sed volutpat
+    subtitle: >-
+      Sed vulputate sem tristique cursus sed magna gravida non lorem ipsum dolor
+      sit amet.
+    phone: (000) 000-0000
+    phone_link: '#'
+  copyright: '&copy; Hypothesis. All rights reserved.'
+palette: blue
+palettes:
+  blue:
+    sass:
+      accent1: '#23b1ec'
+      accent2: '#80bb2d'
+  green:
+    sass:
+      accent1: '#1bcea5'
+      accent2: '#735bb9'
+sass:
+  indentWidth: 4
+  style: nested
+  precision: 10
+plugins:
+  - jekyll-menus
+permalink: '/posts/:slug:output_ext'
