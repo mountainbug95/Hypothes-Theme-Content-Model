@@ -1,0 +1,535 @@
+backend:
+  name: git-gateway
+  branch: master
+media_folder: uploads
+public_folder: /uploads
+collections:
+  - name: config
+    label: Config
+    files:
+      - name: config
+        label: Config
+        file: _config.yml
+        fields:
+          - name: title
+            label: Title
+            widget: text
+            required: true
+          - name: header
+            widget: object
+            required: false
+            label: Header Configuration
+            fields:
+              - name: logo
+                widget: string
+                required: true
+                label: Header Logo Text
+                hint: >-
+                  The Logo Text in the upper left corner of the page (may
+                  contain HTML)
+          - name: footer
+            widget: object
+            required: false
+            label: Footer Configuration
+            fields:
+              - name: title
+                widget: string
+                required: false
+                label: Footer Title
+                hint: The title displayed at the top of the left footer section
+              - name: subtitle
+                widget: markdown
+                required: false
+                label: Footer Subtitle
+                hint: The text displayed below the footer title
+              - name: social_links
+                widget: list
+                required: false
+                label: Social Media
+                hint: A list of social media links
+                fields:
+                  - name: title
+                    widget: string
+                    required: false
+                    label: Title
+                  - name: icon
+                    widget: string
+                    required: false
+                    label: Icon
+                    hint: Font Awesome icon
+                  - name: link_url
+                    widget: string
+                    required: false
+                    label: URL
+              - name: ref_list1
+                widget: object
+                required: false
+                label: First References List
+                fields:
+                  - name: enabled
+                    widget: boolean
+                    required: false
+                    label: Enabled
+                    default: false
+                    hint: Displays the Section in the site footer
+                  - name: title
+                    widget: string
+                    required: false
+                    label: List Title
+                  - name: links
+                    widget: list
+                    required: false
+                    label: Reference Links
+                    hint: A list of reference links
+                    fields:
+                      - name: title
+                        widget: string
+                        required: true
+                        label: Reference Title
+                      - name: link_url
+                        widget: string
+                        required: true
+                        label: Reference URL
+              - name: ref_list2
+                widget: object
+                required: false
+                label: Second References List
+                fields:
+                  - name: enabled
+                    widget: boolean
+                    required: false
+                    label: Enabled
+                    default: false
+                    hint: Displays the Section in the site footer
+                  - name: title
+                    widget: string
+                    required: false
+                    label: List Title
+                  - name: links
+                    widget: list
+                    required: false
+                    label: Reference Links
+                    hint: A list of reference links
+                    fields:
+                      - name: title
+                        widget: string
+                        required: true
+                        label: Reference Title
+                      - name: link_url
+                        widget: string
+                        required: true
+                        label: Reference URL
+              - name: contact
+                widget: object
+                required: false
+                label: Contact Configuration
+                fields:
+                  - name: enabled
+                    widget: boolean
+                    required: false
+                    label: Enabled
+                    default: false
+                    hint: Displays the Section in the site footer
+                  - name: title
+                    widget: string
+                    required: false
+                    label: Contact Section Title
+                  - name: subtitle
+                    widget: markdown
+                    required: false
+                    label: Contact Section Subtitle
+                  - name: phone
+                    widget: string
+                    required: false
+                    label: Phone Number
+                  - name: phone_link
+                    widget: string
+                    required: false
+                    label: Phone Number URL
+                    hint: The URL tied to the phone number
+              - name: copyright
+                widget: string
+                required: false
+                label: Copyright Text
+                hint: The copyright text displayed at the bottom of the footer
+          - name: palette
+            widget: select
+            required: true
+            label: Color Palette
+            hint: The color pallete used for the site
+            options:
+              - blue
+              - green
+  - name: home
+    label: Home
+    files:
+      - name: home
+        label: Home
+        file: index.md
+        fields:
+          - name: title
+            widget: string
+            required: true
+            label: Page Title
+          - name: banner
+            widget: object
+            required: false
+            label: Page Banner
+            hint: The banner displayed at the top of the landing page
+            fields:
+              - name: title
+                widget: text
+                required: true
+                label: Banner Title
+                hint: The bold text displayed at the top of the banner
+              - name: subtitle
+                widget: markdown
+                required: false
+                label: Banner Subtitle
+                hint: the text displayed below the banner title
+              - name: bg_video_path
+                widget: image
+                required: false
+                label: Background Video
+                hint: The video played in the background of the page banner
+              - name: actions
+                widget: list
+                required: false
+                label: Banner Action Buttons
+                fields:
+                  - name: label
+                    widget: string
+                    required: false
+                    label: Button Label
+                    hint: The text displayed inside the action button
+                  - name: url
+                    widget: string
+                    required: false
+                    label: Button URL
+                  - name: is_scrolly
+                    widget: boolean
+                    required: false
+                    label: Is Scrolly
+                    default: false
+                    hint: >-
+                      Gives the button a scroll animation (if button URL is a
+                      section id)
+                  - name: is_primary
+                    widget: boolean
+                    required: false
+                    label: IS Primary
+                    default: false
+                    hint: Gives the button a primary color scheme
+              - name: features
+                widget: list
+                required: false
+                label: Features
+                hint: >-
+                  Feature icons displayed along the bottom of the landing page
+                  banner
+                fields:
+                  - name: title
+                    widget: string
+                    required: true
+                    label: Feature Title
+                    hint: The bold text displayed below the feature icon
+                  - name: subtitle
+                    widget: markdown
+                    required: false
+                    label: Feature Subtitle
+                    hint: The text displayed below the feature title
+                  - name: icon
+                    widget: string
+                    required: false
+                    label: Icon
+                    hint: Font Awesome icon
+          - name: sections
+            widget: list
+            required: false
+            label: Sections
+            hint: Home Sections
+            widgets:
+              - name: tabs
+                widget: object
+                label: Tabs Section
+                fields:
+                  - name: title
+                    widget: string
+                    required: true
+                    label: Section Title
+                    default: Sed adipising ornare risus
+                    hint: The bold text displayed at the top of the section
+                  - name: subtitle
+                    widget: markdown
+                    required: false
+                    label: Section Subtitle
+                    default: >-
+                      Praesent dapibus, neque id cursus faucibus, tortor neque
+                      egestas augue eu vulpu magna erat. Aliquam erat volutpat.
+                      Nam dui mi tincidunt quis accumsan porttitor facilisis
+                      luctus, metus lorem feugiat tempus adipiscing.
+                    hint: The text displayed below the section title
+                  - name: bg_accent
+                    widget: select
+                    required: true
+                    label: Background Accent
+                    default: accent1
+                    hint: Controls The color scheme of the section
+                    options:
+                      - alt
+                      - accent1
+                      - accent2
+                  - name: section_id
+                    widget: string
+                    required: true
+                    label: Section ID
+                    default: one
+                  - name: tabs
+                    widget: list
+                    required: false
+                    label: Section Tabs
+                    hint: A list of tabs tabs displayed in the section
+                    fields:
+                      - name: title
+                        widget: string
+                        required: false
+                        label: Tab Title
+                      - name: left_sections
+                        widget: object
+                        required: false
+                        label: Left Sections
+                        hint: The sections displayed on the left side of the tab
+                        fields:
+                          - name: title1
+                            widget: string
+                            required: false
+                            label: Top Left Title
+                            hint: The title of the top left section
+                          - name: subtitle1
+                            widget: markdown
+                            required: false
+                            label: Top Left Subtitle
+                            hint: The subtitle of the top left section
+                          - name: title2
+                            widget: string
+                            required: false
+                            label: Bottom Left Title
+                            hint: The title of the bottom left section
+                          - name: subtitle2
+                            widget: markdown
+                            required: false
+                            label: Bottom Left Subtitle
+                            hint: The subtitle of the Bottom left section
+                      - name: right_sections
+                        widget: object
+                        required: false
+                        label: Right Sections
+                        hint: The sections displayed on the right side of the tab
+                        fields:
+                          - name: title1
+                            widget: string
+                            required: false
+                            label: Top Right Title
+                            hint: The title of the top right section
+                          - name: subtitle1
+                            widget: markdown
+                            required: false
+                            label: Top Right Subtitle
+                            hint: The subtitle of the top right section
+                          - name: title2
+                            widget: string
+                            required: false
+                            label: Bottom Right Title
+                            hint: The title of the bottom right section
+                          - name: subtitle2
+                            widget: markdown
+                            required: false
+                            label: Bottom Right Subtitle
+                            hint: The subtitle of the Bottom Right section
+                      - name: center_img_path
+                        widget: image
+                        required: false
+                        label: Center Image
+                        hint: The image displayed in the center of the tab
+                  - name: component
+                    widget: hidden
+                    required: true
+                    default: tabs.html
+              - name: spotlight
+                widget: object
+                label: Spotlight Section
+                fields:
+                  - name: title
+                    widget: string
+                    required: true
+                    label: Section Title
+                    default: Etiam sed faucibus consequat
+                    hint: The bold text displayed at the top of the section
+                  - name: subtitle
+                    widget: markdown
+                    required: false
+                    label: Section Subtitle
+                    default: >-
+                      Praesent dapibus, neque id cursus faucibus, tortor neque
+                      egestas augue eu vulpu magna erat. Aliquam erat volutpat.
+                      Nam dui mi tincidunt magna accumsan.
+                    hint: The text displayed below the section title
+                  - name: bg_accent
+                    widget: select
+                    required: true
+                    label: Background Accent
+                    default: accent2
+                    hint: Controls The color scheme of the section
+                    options:
+                      - alt
+                      - accent1
+                      - accent2
+                  - name: section_id
+                    widget: string
+                    required: true
+                    label: Section ID
+                    default: two
+                  - name: home_img_path
+                    widget: image
+                    required: false
+                    label: Spotlight Image
+                    hint: The image displayed below the spotlight subtitle
+                  - name: component
+                    widget: hidden
+                    required: true
+                    default: spotlight.html
+              - name: posts
+                widget: object
+                label: Posts Section
+                fields:
+                  - name: title
+                    widget: string
+                    required: true
+                    label: Section Title
+                    default: Auctor nam sed aliquam
+                    hint: The bold text displayed at the top of the section
+                  - name: subtitle
+                    widget: markdown
+                    required: false
+                    label: Section Subtitle
+                    default: >-
+                      Praesent dapibus, neque id cursus faucibus, tortor neque
+                      egestas augue eu vulpu magna erat. Aliquam erat volutpat.
+                      Nam dui mi tincidunt magna accumsan.
+                    hint: The text displayed below the section title
+                  - name: bg_accent
+                    widget: hidden
+                    required: true
+                    label: Background Accent
+                    default: alt
+                    hint: Controls The color scheme of the section
+                  - name: section_id
+                    widget: string
+                    required: true
+                    label: Section ID
+                    default: three
+                  - name: component
+                    widget: hidden
+                    required: true
+                    default: posts.html
+          - name: layout
+            widget: hidden
+            required: true
+            label: Layout
+            default: home
+  - name: page
+    label: Pages
+    folder: /
+    filter:
+      field: layout
+      value: page
+    create: true
+    extension: md
+    slug: '{{slug}}'
+    fields:
+      - name: title
+        widget: string
+        required: true
+        label: Page Title
+      - name: subtitle
+        widget: markdown
+        required: false
+        label: Page Subtitle
+      - name: content_img_path
+        widget: image
+        required: false
+        label: Content Image
+        hint: The image displayed in the page content
+      - name: layout
+        widget: hidden
+        required: true
+        label: Layout
+        default: page
+      - name: body
+        label: Content
+        widget: markdown
+  - name: post
+    label: Posts
+    folder: _posts
+    filter:
+      field: layout
+      value: page
+    create: true
+    extension: md
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    fields:
+      - name: title
+        widget: string
+        required: true
+        label: Page Title
+      - name: subtitle
+        widget: markdown
+        required: false
+        label: Page Subtitle
+      - name: excerpt
+        widget: markdown
+        required: false
+        label: Post Excerpt
+        hint: The excerpt displayed in the home posts section
+      - name: datel
+        widget: date
+        required: true
+        label: Post Date
+      - name: content_img_path
+        widget: image
+        required: false
+        label: Content Image
+        hint: The image displayed in the page content
+      - name: alt_img_path
+        widget: image
+        required: false
+        label: Home Posts Image
+        hint: The image displayed in the home posts section
+      - name: layout
+        widget: hidden
+        required: true
+        label: Layout
+        default: page
+      - name: body
+        label: Content
+        widget: markdown
+  - name: elements
+    label: Elements
+    files:
+      - name: elements
+        label: Elements
+        file: elements.md
+        fields:
+          - name: title
+            widget: string
+            required: true
+            label: Page Title
+          - name: subtitle
+            widget: markdown
+            required: false
+            label: Page Subtitle
+          - name: layout
+            widget: hidden
+            required: true
+            label: Layout
+            default: elements
