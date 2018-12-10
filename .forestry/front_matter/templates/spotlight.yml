@@ -48,6 +48,7 @@ fields:
     description: The image displayed below the spotlight subtitle
   - type: text
     name: component
+    label: Section Component
     hidden: true
     default: spotlight.html
     config:

@@ -56,6 +56,7 @@ fields:
         template: tab
   - type: text
     name: component
+    label: Section Component
     hidden: true
     default: tabs.html
     config:
