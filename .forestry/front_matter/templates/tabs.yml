@@ -52,7 +52,7 @@ fields:
     fields:
       - type: include
         name: include_tab
-        label: Include tab
+        label: Tab
         template: tab
   - type: text
     name: component

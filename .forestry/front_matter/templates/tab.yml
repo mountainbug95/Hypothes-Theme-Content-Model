@@ -1,4 +1,5 @@
 ---
+label: Tab
 is_partial: true
 display_field: title
 fields:

@@ -58,7 +58,7 @@ fields:
         fields:
           - type: include
             name: include_ref_list
-            label: Include ref_list
+            label: Reference List
             template: ref_list
       - type: field_group
         name: ref_list2
@@ -66,7 +66,7 @@ fields:
         fields:
           - type: include
             name: include_ref_list
-            label: Include ref_list
+            label: Reference List
             template: ref_list
       - type: field_group
         name: contact
@@ -109,3 +109,27 @@ fields:
       options:
         - blue
         - green
+  - type: field_group
+    name: palettes
+    hidden: true
+    fields:
+      - type: field_group
+        name: blue
+        fields:
+          - type: field_group
+            name: sass
+            fields:
+              - type: text
+                name: accent1
+              - type: text
+                name: accent2
+      - type: field_group
+        name: green
+        fields:
+          - type: field_group
+            name: sass
+            fields:
+              - type: text
+                name: accent1
+              - type: text
+                name: accent2

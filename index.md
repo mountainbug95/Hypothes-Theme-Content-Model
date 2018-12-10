@@ -86,7 +86,7 @@ sections:
             mitin.
         center_img_path: images/pic03.jpg
     component: tabs.html
-    widget: tabs
+    template: tabs
   - title: Etiam sed faucibus consequat
     subtitle: >-
       Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue eu
@@ -96,7 +96,7 @@ sections:
     section_id: two
     home_img_path: images/pic04.jpg
     component: spotlight.html
-    widget: spotlight
+    template: spotlight
   - title: Auctor nam sed aliquam
     subtitle: >-
       Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue eu
@@ -105,7 +105,7 @@ sections:
     bg_accent: alt
     section_id: three
     component: posts.html
-    widget: posts
+    template: posts
 menus:
   main:
     title: Home
