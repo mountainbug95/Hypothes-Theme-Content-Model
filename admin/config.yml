@@ -163,6 +163,7 @@ collections:
           - name: palettes
             widget: hidden
             required: false
+            label: Palettes
   - name: home
     label: Home
     files:
@@ -251,7 +252,7 @@ collections:
             required: false
             label: Sections
             hint: Home Sections
-            widgets:
+            types:
               - name: tabs
                 widget: object
                 label: Tabs Section
@@ -357,6 +358,7 @@ collections:
                   - name: component
                     widget: hidden
                     required: true
+                    label: Section Component
                     default: tabs.html
               - name: spotlight
                 widget: object
@@ -400,6 +402,7 @@ collections:
                   - name: component
                     widget: hidden
                     required: true
+                    label: Section Component
                     default: spotlight.html
               - name: posts
                 widget: object
@@ -434,6 +437,7 @@ collections:
                   - name: component
                     widget: hidden
                     required: true
+                    label: Section Component
                     default: posts.html
           - name: layout
             widget: hidden
